@@ -1,13 +1,13 @@
-import Home from './screens/Home';
-import './App.css';
 
-function App() {
-  return (
-    <div>
-    <Home/>
-      
-    </div>
-  );
+import React from 'react';
+
+
+const App = () => {
+
+  return(
+    <>
+    <>Test</>
+    </>
+  )
 }
-
 export default App;
