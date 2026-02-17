@@ -1,6 +1,8 @@
-import React from "react";
+import React, { use } from "react";
 import "../styles/LoginPage.css";
 import axios from "axios";
+import {loginUpdate }from '../store/LoginSlice'
+import { useDispatch } from "react-redux";
 
 const USER_AUTH = {
    "grant_type":"client_credentials",
@@ -13,6 +15,7 @@ const USER_AUTH = {
 const LOGIN_API = "https://accounts.spotify.com/api/token"
 
 const Login  =()=>{
+    const dispatch=useDispatch();
 
 
     const handleLogin = async() =>{
@@ -21,7 +24,8 @@ const Login  =()=>{
                 "Content-Type": "application/x-www-form-urlencoded"
             }
         })
-console.log(res);
+        dispatch(loginUpdate(res));
+//console.log(res);
     }
 
 
